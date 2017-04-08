@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>nthPrime n=50000</title>
+  <script>
+    function nthPrime(n) {
+      let i = 3;
+      let primes = [2];
+      n--;
+      while (n > 0) {
+        if (primes.every(v => i % v != 0)) {
+          primes.push(i);
+          n--;
+        }
+        i += 2;
+      }
+      return primes.pop();
+    }
+  </script>
+</head>
+<body>
+  <script>
+    console.log("nthPrime-js");
+    let start = Date.now();
+    console.log(`nthPrime(50000) = ${nthPrime(50000)}`);
+    console.log(`elapsed: ${(Date.now() - start) / 1000} sec`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Fibonacci n=46</title>
+  <script>
+    function fibonacci(n) {
+      if (n <= 1) {
+        return 1;
+      } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+    }
+  </script>
+</head>
+<body>
+  <script>
+    console.log("fibo-js");
+    let start = Date.now();
+    console.log(`fibonacci(46) = ${fibonacci(46)}`);
+    console.log(`elapsed: ${(Date.now() - start) / 1000} sec`);
+  </script>
+</body>
+</html>
